@@ -13,7 +13,7 @@ import 'package:xml/xml.dart';
 /// A Speed tester.
 class SpeedTestDart {
   /// Returns [Settings] from speedtest.net.
-  Future<Settings> getSettings(Map<String, String>? headers) async {
+  Future<Settings> getSettings({Map<String, String>? headers}) async {
     final response = await http
         .get(Uri.parse(configUrl), headers: headers);
     final settings = Settings.fromXMLElement(
