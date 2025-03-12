@@ -14,8 +14,7 @@ import 'package:xml/xml.dart';
 class SpeedTestDart {
   /// Returns [Settings] from speedtest.net.
   Future<Settings> getSettings({Map<String, String>? headers}) async {
-    final response = await http
-        .get(Uri.parse(configUrl), headers: headers);
+    final response = await http.get(Uri.parse(configUrl), headers: headers);
     final settings = Settings.fromXMLElement(
       XmlDocument.parse(response.body).getElement('settings'),
     );
